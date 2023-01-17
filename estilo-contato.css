@@ -1,10 +1,11 @@
 main{ 
     width: 940px;
-    margin: 0 auto;
+    margin: 0 auto;    
 }
 
 form{
     margin: 40px 0 ;
+    position: relative;
 }
 
 form label, form legend{ 
@@ -47,4 +48,28 @@ form label, form legend{
 }
 .botao-submeter:active{
     background-color: black;
+}
+
+table{ 
+    margin: 20px 0 40px;
+    bottom: 50px;
+    width: 40%;
+    position: absolute;
+    right: 200px;
+    left: 550px;
+    top: 630px;
+}
+
+thead{ 
+    background: #555555;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+td,th{ 
+    border: 1px solid black;
+    text-align: center;
+    font-size: 20px;
+    padding: 8px 15px;;
 }
