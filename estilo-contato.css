@@ -7,7 +7,7 @@ form{
     margin: 40px 0 ;
 }
 
-form label, form p{ 
+form label, form legend{ 
     display: block;
     font-size: 20px;
     margin-bottom: 10px;
@@ -24,6 +24,27 @@ form label, form p{
     margin: 20px 0;
 }
 
-.pref-contato{ 
+.fielset{ 
     margin: 20px 0;
+}
+
+.botao-submeter{ 
+    width: 40%;
+    padding: 20px;
+    font-weight: bold;
+    font-size: 15px;
+    color: aliceblue;
+    background-color: orange;
+    border: none;
+    border-radius: 10px;
+    transition: 1s all;
+    cursor: pointer;
+}
+
+.botao-submeter:hover{ 
+    background:darkorange;
+    transform: scale(1.2);
+}
+.botao-submeter:active{
+    background-color: black;
 }
