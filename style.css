@@ -1,3 +1,6 @@
+body{
+    font-family: 'Montserrat', sans-serif;
+}
 
 #cabecalho{ 
     background-color: #BBBBBB;
@@ -137,5 +140,76 @@ nav{
 
 #linha-rodape:hover p{ 
     color:#C78C19;
+}
+
+/* CCS da Página - inicial*/
+.banner{ 
+    width: 100%;
+}
+
+.titulo-principal{
+    text-align: center;
+    font-size: 2em;
+    margin: 0 0 1em;
+    clear: left;
+}
+
+.utensilios{ 
+    width: 120px;
+    float: left;
+    margin: 0 20px 20px 0 ;
+}
+.principal{
+    margin: 50px 100px 0 100px;
+}
+.principal p { 
+    margin: 0 0 0 1em;
+}
+
+.principal strong{ 
+    font-weight: bold;
+}
+
+.principal em{ 
+    font-style: italic;
+}
+.mapa{ 
+    padding: 3em 0 ;
+    clear: left;
+    margin: 0 100px;
+}
+
+.mapa p {
+    margin: 0 0 2em;
+    text-align: center;
+}
+.beneficios{
+    margin: 2em auto;
+}
+.imagem-beneficios{ 
+    width: 60%;
+}
+
+.conteudo-beneficios{ 
+    width: 640px;
+    margin: 0 auto;
+}
+
+.lista-beneficios{ 
+    width: 40%;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.itens-beneficios{ 
+    line-height: 1.5;
+}
+
+.itens-beneficios:first-child {
+    font-weight: bold;
+}
+.video{
+    width:560px;
+    margin: 2em auto;
 }
 

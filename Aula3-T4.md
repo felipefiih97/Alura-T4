@@ -81,6 +81,11 @@ Tags semânticas para tabelas em html:
  <tbody>: é o corpo da tabela. 
  <tfoot>: esse é o que marca o rodapé , ele poderia ser adicionado no final de cada linha ou no final da tabela. 
 
+    *A tabela também possibilita a junção de celulas de uma linha para criar uma celula que irá ocupa todas estas células. Abaixo tem um exmeplo de como fazer aplicando diretamente na tag <td>.
+
+        <tr>
+            <td colsplan="5">Rio de Janeiro  </td>
+        </tr> 
  
  
 
