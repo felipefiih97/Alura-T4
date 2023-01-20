@@ -1,5 +1,6 @@
 body{
     font-family: 'Montserrat', sans-serif;
+    background:linear-gradient(to bottom,white 30%,grey 70%);
 }
 
 #cabecalho{ 
@@ -160,7 +161,9 @@ nav{
     margin: 0 20px 20px 0 ;
 }
 .principal{
-    margin: 50px 100px 0 100px;
+    width: 940px;
+    margin: 0 auto;
+    padding: 3em 0;
 }
 .principal p { 
     margin: 0 0 0 1em;
@@ -176,7 +179,11 @@ nav{
 .mapa{ 
     padding: 3em 0 ;
     clear: left;
-    margin: 0 100px;
+}
+
+.mapa-conteudo{
+    width: 940px;
+    margin: 0 auto;'
 }
 
 .mapa p {
@@ -188,6 +195,11 @@ nav{
 }
 .imagem-beneficios{ 
     width: 60%;
+    transition: 400ms;
+}
+
+.imagem-beneficios:hover{
+    opacity: 50%;
 }
 
 .conteudo-beneficios{ 
@@ -207,6 +219,10 @@ nav{
 
 .itens-beneficios:first-child {
     font-weight: bold;
+}
+
+.itens-beneficios:before{
+    content:"✭";
 }
 .video{
     width:560px;

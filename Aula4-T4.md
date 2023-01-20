@@ -1,4 +1,4 @@
-## Nessa quarta aula vamos estilizar apagina principal home, vamos estiliza-la e modificar sua composição com novas funções aprendidas durantes os outros módulos.
+## Nessa quarta aula vamos estilizar a página principal home, vamos estiliza-la e modificar sua composição com novas funções aprendidas durantes os outros módulos.
  
 <section> : essa tag é recomendada para ser utilizada quando todos o agrupamento de conteúdos estão semâticamente relacionados. 
 
@@ -31,7 +31,7 @@ classes e identificadores (class = " " & id = " "):
             margin: 0 20px 20px 0 ;
         }
     ~~~
-    ### obs: o float altera completamente toda a estrutuda da página , todos os elementos abaixo do float são afetados por ele. 
+### obs: o float altera completamente toda a estrutuda da página , todos os elementos abaixo do float são afetados por ele. 
             
             *Para limpar essas alterações do float em algum elemento utilizamos a propriedade CLEAR.
 
@@ -80,8 +80,127 @@ classes e identificadores (class = " " & id = " "):
             * A estilização é pelo CSS igual a qualquer outro elemento html.
 
             # VIDEO:Para adicionar e estilizar é o mesmo processo do maps .
-# Obs: nós trazemos esse conteúdo como um iframe e quando queremos fazer algum detalhe visual (como centralizar o conteúdo) nos botamos uma div em volta e tratamos esse conteúdo. 
+## Obs: nós trazemos esse conteúdo como um iframe e quando queremos fazer algum detalhe visual (como centralizar o conteúdo) nos botamos uma div em volta e tratamos esse conteúdo. 
 
-## Pseudo-elementos
+## PSEUDO-CLASSES. 
 
-            *Os pseudos-elementos 
+            *As pseudos-classes esta relacionado a um evento que vc quer adicionar a um elemento especifico ou então com relação de uma tag com suas tags filhas. 
+
+            EX.
+                ~~~css
+                    a:hover{
+                        /*formatação*/
+                    }
+
+                    input[type = text]:focus{
+	                            /*formatação*/
+                    }
+                    input.formulario:required{
+                        /*formatação*/
+                    }
+                    #lista:first-child{
+                        /*formatação*/
+                    }
+                ~~~
+
+## PSEUDO-ELEMENTO. 
+
+        *É um seletor representado através de :: que permite estilizar parte especifica de um elemento ao invés dele como um todo , por isso o pseudo-elemento está constantemente relacionado a posições do conteúdo dentro do seletor ao qual estão associados.
+        
+        Ex. Podemos estilizar apenas a primeira letra de um texto em especifico.
+        Ex.
+            p::first-line{
+	                /*formatação*/
+                }
+            h1#tituloPrincipal::first-letter{
+	                /*formatação*/
+                }
+            div.conteudo::selection{
+	                /*formatação*/
+                }
+## SELETORES AVANÇADOS. 
+
+        *Os seletores são usados para selecionar elementos HTML nos atributos, estes seletores são divididos em alguns tipos que vou falar a seguir. 
+
+        * SELETOR FILHO DIRETO: este seletor seleciona o primeiro elemento que é filho imediato do primeiro elemento que botamos como seletor.
+
+                ** No exemplo abaixo a tag  <p> é o segundo elemento filho imediato do seletor div que é o primeiro elemento.
+
+                SINTAXE:
+                ~~~css
+                    div > p { 
+                        background-color: DodgerBlue; 
+                    }
+                ~~~
+
+        * SELETOR DE IRMÃOS ADJACENTES: Seleciona todos os elementos que são irmãos adjacenetes do elemento especificado . Ele seleciona o segundo elemento que segue imediatamento o primeiro. 
+
+                ** No exemplo abaixo a tag <p> é o segundo elemento depois do primeiro elemento especificado que é a tag <img>. a tag <p> segue imediatamente a  tag <img>. 
+
+                SINTAXE:
+                ~~~css
+                    img + p{
+                        background-color: Blue;
+                    }
+                ~~~
+
+        * SELETOR GERAL DE IRMÃOS: Seleciona todos os elementos que vem depois do primeiro elemento seletor, eles , todos  os elementos tem que ser filhos do mesmo pai e não é necessário que o segundo siga imediatamente o primeiro. 
+                ** No exemplo abaixo nós seleionamos todas as tags <p> que vem depois da tag <img>.
+
+                SINTAXE:
+                ~~~css
+                    img ~ p{ 
+                        background-color: Red;
+                    }
+                ~~~
+        
+        *SELETOR DE EXCLUSÃO: Esse seletor "exclui" o elemento selecionado, ele basicamente não estiliza o elemento.
+                ** No exemplo abaixo selecionamos a classe e os elementos <p> que vão receber a estilização e o elemento que não vai receber fica entre parenteses. 
+
+                ~~~css
+                    .principal p:not(#missão){
+                            background-color: Red;
+                    }
+                ~~~
+                
+## Função calc(): 
+
+                *A função calc() é uma função usada para fazer calculos com base nas propriedades do  css. 
+
+        ~~~css 
+            .utensilios {
+            width: calc(40% - 26px);
+        }
+        ~~~
+
+## Opacidade (opacity): 
+
+        * Essa ferramenta põe uma camada na imagem dando opacidade. 
+            Sintaxe:
+
+            ~~~css
+                .imagem-beneficios {
+                     opacity: 0.3;
+                }
+            ~~~
+        * dica: podemos fazer um elemento receber a opacidade assim que mouse passar por cima dele. 
+
+            ~~~css
+                .image-beneficios:hover{ 
+                    opacity: 0.3;
+                }
+            ~~~
+
+        OPACIDADE EM CORES: Para adicionar a opaciade em core vc faz isso através 
+        da inserção da cor por rgba que é diferente do rgb normal , o rgba temm mais uma propriedade em sua  sintaxe para ser adicionada que é a camada de opacidade. 
+            Obs: Posso utilizar a opacidade em qualquer tipo de elemento, em cores de texto e titulo , cores de bodas , cores de fundo etc.
+
+            ~~~css
+                .titulo-principal {
+                    text-align: center;
+                    font-size: 2em;
+                    margin: 0 0 1em;
+                    clear: left;
+                    color: rgba(0,0,0,0.3);
+                }
+            ~~~ 
