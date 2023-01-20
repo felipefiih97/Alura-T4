@@ -87,6 +87,7 @@ classes e identificadores (class = " " & id = " "):
             *As pseudos-classes esta relacionado a um evento que vc quer adicionar a um elemento especifico ou então com relação de uma tag com suas tags filhas. 
 
             EX.
+
                 ~~~css
                     a:hover{
                         /*formatação*/
@@ -109,6 +110,7 @@ classes e identificadores (class = " " & id = " "):
         
         Ex. Podemos estilizar apenas a primeira letra de um texto em especifico.
         Ex.
+
             p::first-line{
 	                /*formatação*/
                 }
@@ -127,6 +129,7 @@ classes e identificadores (class = " " & id = " "):
                 ** No exemplo abaixo a tag  <p> é o segundo elemento filho imediato do seletor div que é o primeiro elemento.
 
                 SINTAXE:
+
                 ~~~css
                     div > p { 
                         background-color: DodgerBlue; 
@@ -138,6 +141,7 @@ classes e identificadores (class = " " & id = " "):
                 ** No exemplo abaixo a tag <p> é o segundo elemento depois do primeiro elemento especificado que é a tag <img>. a tag <p> segue imediatamente a  tag <img>. 
 
                 SINTAXE:
+
                 ~~~css
                     img + p{
                         background-color: Blue;
@@ -147,7 +151,8 @@ classes e identificadores (class = " " & id = " "):
         * SELETOR GERAL DE IRMÃOS: Seleciona todos os elementos que vem depois do primeiro elemento seletor, eles , todos  os elementos tem que ser filhos do mesmo pai e não é necessário que o segundo siga imediatamente o primeiro. 
                 ** No exemplo abaixo nós seleionamos todas as tags <p> que vem depois da tag <img>.
 
-                SINTAXE:
+                SINTAXE: 
+
                 ~~~css
                     img ~ p{ 
                         background-color: Red;
@@ -194,13 +199,56 @@ classes e identificadores (class = " " & id = " "):
         OPACIDADE EM CORES: Para adicionar a opaciade em core vc faz isso através 
         da inserção da cor por rgba que é diferente do rgb normal , o rgba temm mais uma propriedade em sua  sintaxe para ser adicionada que é a camada de opacidade. 
             Obs: Posso utilizar a opacidade em qualquer tipo de elemento, em cores de texto e titulo , cores de bodas , cores de fundo etc.
+            Sintaxe:
 
-            ~~~css
-                .titulo-principal {
-                    text-align: center;
-                    font-size: 2em;
-                    margin: 0 0 1em;
-                    clear: left;
-                    color: rgba(0,0,0,0.3);
+                ~~~css
+                    .titulo-principal {
+                        text-align: center;
+                        font-size: 2em;
+                        margin: 0 0 1em;
+                        clear: left;
+                        color: rgba(0,0,0,0.3);
+                    }
+                ~~~ 
+
+## Adicionando sombras ao elemento: 
+
+        *Podemos adicionar sombra nos elementos através da propriedade box-shadow. 
+
+            * Esssa propriedade tem sua sintaxe dividida em alguns campos , temos os dois primeiros campos de eixo X E Y que são o posicionamento da sombra, os segundo campo é o que define o desfoque da sombra e último campo que é a cor da sombra.
+
+            ~~~css 
+                .imagem-beneficios{
+                    box-shadow: 10px 10px 5px #000000;
                 }
-            ~~~ 
+            ~~~
+
+            ## Multiplas sombras: Podemos adicionar mais de uma sombra em um mesmo elemento sa seguinte forma. 
+                Sintaxe:
+
+                ~~~css 
+                    .imagem-beneficios{
+                        box-shadow: 10px 10px 5px 20px #00000, -10px -10px yellow, -20px 20px rgba(255,0,0,0.5);
+                    }
+                ~~~
+
+            ## Sombra interna: Podemos criar uma sombra interna dentro do elemento adicionando a propriedade (inset). 
+                    * O posicionamento será apartir do centro do elemento. 
+                    * Para que a sombra se torne visivel precisamos adicionar um espaçamento pois a sombra  tem o mesmo tamanho do elemento se não adicionarmos o espaçamento. 
+                Sintaxe:
+
+                ~~~css 
+                    .beneficios{
+                        box-shadow: inset 0 0 30px #FF0000;                
+                    }
+                ~~~
+            
+            ## Sombra em Texto: Para criar sobra em texto é utlizado o mesmo processo para aplicar sombra em qualquer elemento. 
+
+            Sintaxe:
+    
+                 ~~~css 
+                    .titulo-principal{
+                        box-shadow: 2px 2px  #FF0000;                
+                    }
+                ~~~

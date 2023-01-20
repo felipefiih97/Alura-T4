@@ -42,7 +42,7 @@ Nessa quarta parte do curso temos algumas novas tags para a criação de um form
 * Como estruturar melhor o nosso código com fieldset e legend
 * Como adicionar uma alternativa à imagem, descrevendo-a, com o atributo alt
 
-CSS : fiz algumas alterações para estilizar o botão e deixa-lo com algumas ações após passar o mouse em cima e clicar, para isso utilizamos algumas propriedades que iremos falar a seguir. 
+## CSS : fiz algumas alterações para estilizar o botão e deixa-lo com algumas ações após passar o mouse em cima e clicar, para isso utilizamos algumas propriedades que iremos falar a seguir. 
 
     trasnsition : essa propriedade é responsavel por fazer a alteração dos valores em uma transição de duração especifica.
 
@@ -54,24 +54,28 @@ CSS : fiz algumas alterações para estilizar o botão e deixa-lo com algumas a�
                 cursor: pointer;
         }
 
-transform: essa propriedade é aonde nós colocamos os valores que serão alterados no elemento na hora da transition.
+## Transform: essa propriedade é a onde nós colocamos os valores que serão alterados no elemento na hora da transition.
     ex: no exemplo abaixo eu utilizei o transform em um elemento que tem um hover , o hover é uma propriedade que ativa algo quando o mouse está em cima do elemento.
 
         ex: apliquei o transform em um elemento com hover , o que significa que o transform fara será aplicado quando o mouse passar  por cima do elemento.
             *o elemento vai mudar de cor ,de laranja para uma cor mais escura e vai mudar sua escala para um tamanho maior.
 
-        .botao-submeter:hover{ 
-            background:darkorange;
-            transform: scale(1.2);
-        }
+            ~~~css
+                .botao-submeter:hover{ 
+                    background:darkorange;
+                    transform: scale(1.2);
+                }
+            ~~~
 
-         * o transform tem mais algumas pripriedade que podem ser utilizadas ,como a rotate.
-         *para utilizar as duas propriedades eu tenho que colocalas uma do lado da outra  
-
-        .botao-submeter:hover{ 
-            background:darkorange;
-            transform: scale(1.2) rotate(7deg);
-        }
+         * O transform tem mais algumas pripriedade que podem ser utilizadas como a rotate.
+         * Para utilizar as duas propriedades eu tenho que coloca-las uma do lado da outra:
+ 
+            ~~~css
+                .botao-submeter:hover{ 
+                    background:darkorange;
+                    transform: scale(1.2) rotate(7deg);
+                }
+            ~~~
 
 Tags semânticas para tabelas em html: 
  <table>: corpo da tabela , ela engloba toda a estrutura da tabela. 

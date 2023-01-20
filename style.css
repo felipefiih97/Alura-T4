@@ -43,7 +43,6 @@ nav{
     width: 940px;
     margin: 0 auto;
     padding: 60px;
-    
 }
 .produtos li{ 
     display: inline-block;
@@ -56,6 +55,7 @@ nav{
     box-sizing: border-box;
     border: 3px solid black;
     border-radius: 10px;
+    background:white;
 }
 
 .produtos li:hover{ 
@@ -70,17 +70,20 @@ nav{
 
 .produtos li:hover h2{ 
     font-size: 40px;
+    transition: 1s all;
 }
 
 .produtos li:hover .produto-descricao{ 
     font-size: 20px; 
+    transition: 1s all;
 }
 
 .produtos li:hover .produto-preco{
     font-size: 26px;
+    transition: 1s all;
 }
 .produtos h2{ 
-    font-size: 30px;
+    font-size: 25px;
     font-weight: bold;
 }
 
@@ -183,7 +186,7 @@ nav{
 
 .mapa-conteudo{
     width: 940px;
-    margin: 0 auto;'
+    margin: 0 auto;
 }
 
 .mapa p {
@@ -196,10 +199,15 @@ nav{
 .imagem-beneficios{ 
     width: 60%;
     transition: 400ms;
+    box-shadow: 10px 10px 10px #000000;
+    transition: 1s all;
+    cursor: pointer;
 }
 
 .imagem-beneficios:hover{
     opacity: 50%;
+    transform: scale(1.2);
+    box-shadow: 7px 7px 10px #000000;
 }
 
 .conteudo-beneficios{ 
@@ -229,3 +237,35 @@ nav{
     margin: 2em auto;
 }
 
+@media screen and (max-width: 480px){
+    .div-cabecalho ,.principal,.conteudo-beneficios,.mapa-conteudo,.video {
+        width: auto ;
+    }
+
+    h1{
+        text-align: center;
+    }
+    nav{
+        position: static;
+    }
+
+    #cabecalho{
+        padding: auto;
+    }
+    #lista{
+        margin: 0 0 0 5px;
+    }
+    #lista a{
+        font-size: 20px ;
+    }
+
+    .conteudo-beneficios, .imagem-beneficios{
+        width: 100%;
+        text-align: center;
+    }
+
+    .img-rodape{
+        width: 100%;
+        text-align: center;
+    }
+}
