@@ -11,3 +11,4 @@ console.log(areaQuad(10));
 console.log(perimetro(10))
 
 console.log(saudacao("Roger"));
+

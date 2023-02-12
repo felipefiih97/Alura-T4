@@ -34,3 +34,58 @@ Vamos explorar as diferentes formas de se realizar um export se quisermos export
 
 ## Exportar multiplos valores do módulo. 
 
+    Até então exportando apenas uma função por vez ,agora vamos elevar o nível e fazer uma exportação de multiplos valores de um arquivo.
+
+    Existe algumas formas para se fazer uma exportação de multiplos arquivos , irei apresenta-las a seguir. 
+
+    Primeiro modo: exportar um objeto com os arquivos que queremos acessar no outro módulo. 
+#### Export:
+~~~javascript 
+    //script1.js
+    const calculoQuad = function areaQuadrado(l){ 
+    return l*l;
+} 
+
+const perimetro = function perimetroQuadrado(l){ 
+    return l * 4;
+};
+
+    export default {
+        calculoQuad:calculoQuad,  
+        calcperimetro:perimetro   
+    };
+~~~
+#### Import: 
+~~~javascript
+    //script2.js 
+
+    import script1; 
+    console.log(script1);
+~~~
+
+O segundo modo para se exportar multiplos valores é inserindo o **export**
+quando vamos fazer uma declaração de uma variavel ou função,veja como fazer no exemplo abaixo. 
+
+#### Export: 
+~~~javascript 
+    //script1.js
+
+    export const calculoQuad = function areaQuadrado(l){ 
+    return l*l;
+    }; 
+
+   export const perimetro = function perimetroQuadrado(l){ 
+    return l * 4;
+    };
+~~~
+
+Perceba que no código a seguir a sintaxe muda pouco , além de adicionar o **expor ** antes da declação nós não precisamos deficnir umk objeto para fazer a exportação.
+
+#### Import: 
+~~~javascript 
+    //script2.js
+    import{calculoQuad , perimetro };
+    console.log(calculoQuad, 'e' , perimetro);
+~~~
+
+Ao fazer o import perceba que a sintaxe do código também sofreu algumas alterações em relação ao código import do exemplo anterior, note que não estamos mais utilizando o **import modulo** mas fazendo um **object destructuring**, o que significa que estamos acessando cada valor individualmente.
