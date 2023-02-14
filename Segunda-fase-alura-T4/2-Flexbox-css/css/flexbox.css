@@ -1,0 +1,31 @@
+.cabecalhoPrincipal .container{
+    display: flex; 
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.cabecalhoPrincipal-nav{
+    display: flex;
+    flex-direction: row;
+}
+
+
+.rodapePrincipal-patrocinadores .container{
+    display:flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.rodapePrincipal .rodapePrincipal-patrocinadores .rodapePrincipal-patrocinadores-list{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width:70%;
+    margin-right: 5%;
+}
+
+.rodapePrincipal-contatoForm{
+    width: 20%;
+}
