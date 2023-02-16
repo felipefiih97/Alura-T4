@@ -50,3 +50,27 @@
     width: 21%;
 }
 
+
+/*Responsividade modile*/
+
+.cabecalhoPrincipal .container{
+    flex-direction: column;
+    align-items: initial;
+    width: 100%;
+    text-align: center;
+}
+
+.cabecalhoPrincipal-nav{
+  flex-direction: column;
+}
+
+.conteudoPrincipal-cursos{
+    margin-bottom: 5px;
+}
+
+.conteudoPrincipal-cursos-link{ 
+    flex-direction: column;
+    align-items: initial;
+    width: 100%;
+    text-align: center;
+}
