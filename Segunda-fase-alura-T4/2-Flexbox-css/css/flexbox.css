@@ -60,6 +60,25 @@
     margin-left: 0;
 }
 
+.videoSobre .container{ 
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.videoSobre .videoSobre-sobre{
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.videoSobre .videoSobre-button{ 
+    margin-top: 80px;
+    justify-content: baseline;
+}
+
 /*Responsividade modile*/
 @media(max-width: 768px){
     .cabecalhoPrincipal .container{
@@ -83,7 +102,21 @@
         width: 100%;
         text-align: center;
     }
+    
+    .videoSobre .container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
+    .videoSobre .videoSobre-sobre{
+        margin: 10px;
+    } 
+
+    .videoSobre-button{ 
+        margin-top: auto;
+        width: 80%;
+    }
     .rodapePrincipal-navMap-list{
         height: auto;
     }

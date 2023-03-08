@@ -38,7 +38,7 @@ body {
 
 .conteudoPrincipal {
 	margin-top: 20px;
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 .subtitulo {
@@ -203,6 +203,7 @@ body {
 	height: 50px;
 	font-size: .8em;
 	outline: none;
+	width: 500px;
 }
 
 .rodapePrincipal-contatoForm-legend {
