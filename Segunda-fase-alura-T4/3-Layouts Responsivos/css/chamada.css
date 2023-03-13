@@ -37,3 +37,17 @@
         max-width: 600px;
     }
 }
+@media sreen and (min-width: 1024px){
+    .chamada{
+        background-image: url() ;
+        background-size: cover ;
+        padding: 8.25 ;
+    }
+
+    .chamada__titulo{
+        font-size: 3.25rem;
+        margin-bottom: 2rem;
+    }
+    
+
+}
