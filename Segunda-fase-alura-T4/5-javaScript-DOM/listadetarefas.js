@@ -40,5 +40,5 @@ const BotaoConclui = () => {
 const concluirTarefa = (evento) => {
     const botaoConclui = evento.target // mostra o alvo que foi clicado 
     
-    const tarefaCompleta = botaoConclui.
+    const tarefaCompleta = botaoConclui. 
 }
