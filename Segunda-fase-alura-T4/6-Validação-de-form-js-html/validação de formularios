@@ -1,0 +1,47 @@
+# Validação de formulários HTML #
+
+## Validação direto no html ##
+    Podemos faezr algumas praticas de validação basicas diretamente no  html da pág utilizando alguns metódos como: definir o **type** de um campo input e adicionar
+    um atrbuto **required** que basicamente faz com que aquele campo tenha um 
+    preenchimento obrigatório.
+
+## Regex (expressões regulares) ##
+        Podemos utilizar um regex dentro de um pattern, a regex ou expressões regulares é uma forma concisa e flexivel de se identificar cadeias de caracteres. 
+        (padrões de caracters, palavras ou caracteres particulares)
+        
+        A seguir temos um exemplo de como utilizar um regex dentrp do pattern e o  required : 
+
+        ~~~html 
+            <input name="senha" id="senha" class="input" type="password" placeholder="Senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[!@#$%*_=+-]).{6,12}$" required>
+        ~~~
+
+        Vamos analisar a expressão regular e assim entender melhor sua estrutura:
+
+        pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[!@#$%*_=+-]).{6,12}$"
+
+        * ^ , $ : O primeiro e ultimo simbolo da expressão são os que definem até onde queremos checar esse padrão, tudo que estiver dentro deles será analisado.
+
+        * Dentro deles nós temos os conjuntos de regras que são dividos entre parenteses.
+        * ?= : quando começamos com esses caracteres significa que nós permitimos que se aceite alguns carateres. 
+
+        * . : quando temos o ponto significa que não é permitido que quebra de linhas (enters) dentro da senha.
+
+        * * : o asterisco significa que dentro da senha tenha ao menos um desses caracteres. 
+
+        * [a-z] : aqui nós temos os caracteres que são válidos. 
+
+        * !? : quando o conjunto de regras se inicia com uma exclamação e interrogação significa que aqueles carateres não são permitidos.
+
+        * .{6,12} : significa que a senha tenha um tamanho entre 6 a 12 caracteres.
+
+### Title ###
+
+        Adicionamos a o metodo title dentro do input para definir uma mensagem informando o usuário sobre as regras para a criação a senha seguindo corretamente as regras das expressóes regex. 
+
+        ~~~html 
+            <input name="senha" id="senha" class="input" type="password" placeholder="Senha" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?!.*[!@#$%*_=+-]).{6,12}$" title="A senha deve conter de 6 a 12 caracteres , deve conter pelo menos uma letra maiuscula , um número e nçao deve conter simbolos" required>
+        ~~~
+
+### Criando uma validação com Javascrip ###
+
+        
