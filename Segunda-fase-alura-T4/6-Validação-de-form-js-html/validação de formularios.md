@@ -62,7 +62,7 @@
                             mensagem = "Você deve ser maior que 18 anos para se cadastrar."    
                         }
                             /* Utilizamos essa propriedade para validar o campo input,
-                                caso esse input estiver válido a mensagem que ele vai passar é uma string vazia.*/
+                                se caso esse input estiver válido a mensagem que ele vai passar é uma string vazia.*/
                         input.setCustomValidity(mensagem); 
                         }
             ~~~
