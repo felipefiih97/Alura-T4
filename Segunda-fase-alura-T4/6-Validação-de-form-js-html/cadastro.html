@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
     <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
     <link rel="stylesheet" href="./assets/css/componentes/botao.css">
-    <script src="./js/validacao.js"> </script>  
+    <script src="./js/app.js" type="module"> </script>  
 </head>
 <body>
     <main class="container flex flex--coluna flex--centro">
@@ -24,8 +24,8 @@
             <form action="./cadastro_concluido.html" class="formulario flex flex--coluna">
                 <fieldset>
                     <legend class="formulario__legenda">Informações básicas</legend>
-                    <div class="input-container">
-                        <input name="nome" id="nome" class="input" type="text" placeholder="Nome" required>
+                    <div class="input-container input-container--invalido">
+                        <input name="nome" id="nome" class="input" type="text" placeholder="Nome"  required>
                         <label class="input-label" for="nome">Nome</label>
                         <span class="input-mensagem-erro">Este campo não está válido</span>
                     </div>
