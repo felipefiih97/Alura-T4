@@ -8,11 +8,11 @@ export function valida(input){
     /* Essa condição testa se o objeto validity é verdadeiro , se verdadeiro eu escondo a classe input-container--invalido 
     do input*/ 
     if(input.validity.valid){
-        input.parentElement.classList.remove('input-container--invalido');   
-        input.parentElement.querySelector('input-mensagem-erro').innerHTML = ''; 
+        input.parentElement.classList.remove('.input-container--invalido');   
+        input.parentElement.querySelector('.input-mensagem-erro').innerHTML = ''; 
     }else{  
         input.parentElement.classList.add('.input-container--invalido');
-        input.parentElement.querySelector('input-mensagem-erro').innerHTML = mostraMensagemDeErro(tipoDeInput,input); 
+        input.parentElement.querySelector('.input-mensagem-erro').innerHTML = mostraMensagemDeErro(tipoDeInput,input); 
     }
 } 
 
@@ -28,25 +28,41 @@ const mensagemDeErros = {
         valueMissing: 'O campo nome não pode estar vazio.'
     }, 
     email:{
-    valueMissing: 'O campo de email não pode estar vazio.',
-    typeMismatch: "O email digitado não é válido."
+        valueMissing: 'O campo de email não pode estar vazio.',
+        typeMismatch: "O email digitado não é válido."
     }, 
     senha:{ 
         valueMissing:'O campo senha não pode estar vazio.', 
         patternMismatch: 'A senha deve conter de 6 a 12 caracteres , deve conter pelo menos uma letra maiuscula , um número e não deve conter simbolos' 
     }, 
 
-    dataNascimento: { 
+    dataNascimento:{ 
         valueMissing: 'O campo de data de nascimento não pode estar vazio.', 
         customError: 'Você deve ser maior de 18 anos para se cadastrar.' 
-    }
+    },
 
-    cpf: { 
+    cpf:{ 
         valueMissing:'O campo de CPF não pode estar vazio.', 
         customError:'O CPF digitado não é válido.'
+    },
+
+    cep:{ 
+        valueMissing:'O campo CEP não pode estar vazio.',
+        patternMismatch: 'O CEP digitado não é válido'
+    },
+
+    logradouro:{ 
+        valueMissing:'O campo de logradouro não pode estar vazio',
+    }, 
+
+    cidade:{
+        valueMissing:'O campo de cidade não pode estar vazio',
+    },
+
+    estado:{
+        valueMissing:'O campo de estado não pode estar vazio',
     }
 }
-
 
 const validadores = { 
     dataNascimento: input => validaDataNascimento(input), 
@@ -88,18 +104,21 @@ function maiorQue18(data){
     return dataMais18 <= dataAtual 
 }
 
+/*Aqui eu formato o CPF antes de valida-lo, o valor da const será o valor do input
+tratado pegado somente o valor do mesmo e aplicando um metodo replace que substitui
+o valor da string por um outro valor passado dentro do metodo ,no nosso caso ele vai
+retiar os pontos entre os números do CPF e substitui-lo por espaços vazios.*/ 
 function validaCPF(input){ 
     const cpfFormatado = input.value.replace(/\D/g, '')
 
     let mensagem = ' '
 
-    if(!checaCPFRepetido(cpfFormatado)){ 
+    if(!checaCPFRepetido(cpfFormatado) || !checaEstruturaCPF(cpfFormatado)){ 
         mensagem = 'O CPF digitado não é valido'
     }
 
     input.setCustomValidity(mensagem);
 }
-
 function checaCPFRepetido(cpf){ 
     const valoresRepetidos = [ 
         '00000000000',
@@ -114,7 +133,7 @@ function checaCPFRepetido(cpf){
         '99999999999'
     ]
 
-    let cpfValido = true 
+let cpfValido = true 
 
     valoresRepetidos.forEach(valor =>{ 
         if(valor == cpf ){
@@ -123,4 +142,36 @@ function checaCPFRepetido(cpf){
     })
 } 
 
+function checaEstruturaCPF(cpf){
+    const multiplicador = 10 
+
+
+    return checaDigitoVerificador(cpf,multiplicador)
+}
+
+function checaDigitoVerificador(cpf,multiplicador){
+    if(multiplicador >= 12 ){ 
+        return true
+    }
+
+    let multiplicadorInicial = multiplicador
+    let soma = 0 
+    const cpfSemDigitios = cpf.substr(0, multiplicador - 1).split('')
+    const digitoVerificador = cpf.charAt(multiplicador - 1)
+
+    for(let contador = 0 ; multiplicadorInicial > 1; multiplicadorInicial--){
+        soma = soma + cpfSemDigitios[contador] * multiplicadorInicial
+        contador++
+    }
+
+    if(digitoVerificador == confirmaDigito(soma)){
+        return checaDigitoVerificador(cpf, multiplicador + 1)
+    }
+
+    return false
+}
+
+function confirmaDigito(soma){
+    return 11 - (soma % 11)
+}
 
