@@ -66,7 +66,9 @@ const mensagemDeErros = {
 
 const validadores = { 
     dataNascimento: input => validaDataNascimento(input), 
-    cpf: input => validaCPF(input)
+    cpf: input => validaCPF(input), 
+    cep: input => recuperarCEP(input)
+
     
 }
 
@@ -175,3 +177,27 @@ function confirmaDigito(soma){
     return 11 - (soma % 11)
 }
 
+function recuperarCEP(input){
+    const cep = input.value.replace(/\D/g, '') 
+
+    const url = `https://viacep.com.br/ws/${cep}/json/`
+    const options = {
+        method: 'GET', 
+        mode: 'cors',
+        headers:{ 
+            'content-type' : 'application/json;charset=utf-8'
+        }
+    }
+
+    if(!input.validity.patternMismatch && !input.valididy.valueMissing){ 
+        fetch(url,options).then(
+            response => response.json()
+        ).then(
+            data => {
+                console.log(data)
+                
+            }
+        )
+
+    }
+}
