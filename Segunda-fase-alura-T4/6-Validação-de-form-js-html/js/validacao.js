@@ -68,8 +68,6 @@ const validadores = {
     dataNascimento: input => validaDataNascimento(input), 
     cpf: input => validaCPF(input), 
     cep: input => recuperarCEP(input)
-
-    
 }
 
 function mostraMensagemDeErro(tipoDeInput, input){
