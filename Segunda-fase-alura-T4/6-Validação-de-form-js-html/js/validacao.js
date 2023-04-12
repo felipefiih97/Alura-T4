@@ -48,7 +48,8 @@ const mensagemDeErros = {
 
     cep:{ 
         valueMissing:'O campo CEP não pode estar vazio.',
-        patternMismatch: 'O CEP digitado não é válido'
+        patternMismatch: 'O CEP digitado não é válido', 
+        customError: 'Não foi possivel buscar o CEP.'
     },
 
     logradouro:{ 
@@ -61,6 +62,10 @@ const mensagemDeErros = {
 
     estado:{
         valueMissing:'O campo de estado não pode estar vazio',
+    },
+
+    preco:{ 
+        valueMissing:'O campo de preço não pode estar vazio',
     }
 }
 
@@ -133,7 +138,7 @@ function checaCPFRepetido(cpf){
         '99999999999'
     ]
 
-let cpfValido = true 
+var cpfValido = true 
 
     valoresRepetidos.forEach(valor =>{ 
         if(valor == cpf ){
@@ -192,10 +197,25 @@ function recuperarCEP(input){
             response => response.json()
         ).then(
             data => {
-                console.log(data)
-                
+               if(data.erro){
+                input.setCustomValidity('Não foi possivel buscar o CEP.')
+                return
+               } 
+                input.setCustomValidity('')
+               preencherCamposComCEP(data)
+               return
             }
         )
 
     }
+}
+
+function preencherCamposComCEP(data){
+    const logradouro = document.querySelector('[data-tipo="logradouro"]')
+    const  cidade = document.querySelector('[data-tipo="cidade"]')
+    const estado = document.querySelector('[data-tipo="estado"]')
+
+    logradouro.value = data.logradouro 
+    cidade.value = data.localidade 
+    estado.value = data.uf
 }
