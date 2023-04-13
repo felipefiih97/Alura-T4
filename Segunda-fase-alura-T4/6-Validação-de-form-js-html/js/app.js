@@ -14,6 +14,7 @@ inputs.forEach(input => {
             cursor: 'end'
         })
     }
+    
     input.addEventListener('blur', (evento) => {
         valida(evento.target)
     })
