@@ -9,3 +9,10 @@
 ### Objetos ###
 
 ### Instânciação ###
+
+
+## early return ##
+
+## módulos js ##
+
+## Acessores Getters e Setters ## 

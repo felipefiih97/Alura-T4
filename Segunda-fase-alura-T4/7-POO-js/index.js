@@ -1,49 +1,41 @@
+import {Cliente} from "./Cliente.js"
+import {ContaCorrente} from "./ContaCorrente.js"
+
 /*As classes são os moldes que constroi os objetos, dentro delas nos 
 temos as atributos que armazenam os dados dos objetos criados e metodos que fazem com que as classes
 executem alguma ação. 
 */ 
-class Cliente{ 
-    nome;// atributos
-    cpf;
-}
 
-class ContaCorrente{ 
-    agencia; 
-    saldo; 
-    /* uma função dentro de uma classe é chamada de método 
-        a função abaixo é um método que faz operação de saque 
-        dentro da class ContaCorrente.
-    */ 
-    sacar(saldo){ 
-        if(this.saldo >= saldo){ 
-            this.saldo -= saldo 
-        }else{ 
-            console.log("Saldo insuficiente")
-        }
-    }
-}
 /*Abaixo podemos observar a instânciação de uma classe ,instânciar uma classe é o processo de
 construção de um novo objeto ,aqui a const cliente01 é uma instâcia da classe Cliente().
  */  
-const cliente01 = new Cliente(); // instânciação 
-cliente01.nome = 'Ricardo';      // atribuindo valor ao atributo
-cliente01.cpf = 11122233344;
+const cliente01 = new Cliente('Ricardo',11122233344); // instânciação 
+     // atribuindo valor ao atributo    
 
 
-const cliente02 = new Cliente(); 
-cliente02.nome = 'Georgia'; 
-cliente02.cpf = 99988877722; 
+const cliente02 = new Cliente('Georgia', 99988877722); 
 
+const cliente03 = new Cliente('Marcos', 87954276398); 
 
-const ContaCorrenteRicardo = new ContaCorrente();
-ContaCorrenteRicardo.saldo = 100 
-ContaCorrenteRicardo.agencia = 1001
-ContaCorrenteRicardo.sacar(200) // usando o metodo de sacar.
+console.log(cliente02)
+
+const ContaCorrenteRicardo = new ContaCorrente(cliente01,1001);
+ContaCorrenteRicardo.depositar(500)
+ContaCorrenteRicardo.sacar(0) // usando o metodo de sacar.
 
 console.log(ContaCorrenteRicardo)
 
-console.log(cliente01);
-console.log(cliente02);
+
+const Conta2 = new ContaCorrente(); 
+Conta2.cliente = cliente02; 
+Conta2.agencia = 1002;
+
+const Conta3 = new ContaCorrente(); 
+Conta3.cliente = 0;
+Conta3.agencia = 1002
+
+
+console.log(Conta3)
 
 
 class Animal{ 
