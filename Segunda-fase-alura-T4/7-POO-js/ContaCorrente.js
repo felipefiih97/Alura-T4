@@ -7,7 +7,7 @@ export class ContaCorrente{
     // #saldo é um atributo privado que não pode ser alterado pelo usuario 
     // essa conversão(#saldo) não é oficial da lang e não é muito utilizada pelos 
     // desenvolvedores. 
-    _saldo = 0 ; 
+ 
 
     // acessor do tipo set
     set cliente(novoValor){
@@ -19,6 +19,7 @@ export class ContaCorrente{
     constructor(cliente,agencia){ 
             this._cliente = cliente; 
             this.agencia = agencia; 
+            this._saldo = 0;
             ContaCorrente.numeroDeContas += 1; // contador que conta a quantidade de contas intânciadas.
     }
 

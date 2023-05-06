@@ -7,6 +7,10 @@ class Person{
         this.turma = turma;
     }
 
+    saudacao(nome){ 
+        console.log("Olá", this._nome); 
+    }
+
 }
 
 class Professor extends Person{  
@@ -31,10 +35,21 @@ class Estudande extends Person{
         super(nome, turma); 
         this.idade = idade;
     }
+
+    saudacao(){ 
+        console.log("Olá , meu nome é ", this._nome , "e sou da turma" , this.turma); 
+    }
+
+    validaIdadeAula(){ 
+        return this.idade > 1 && this.turma == 1001;
+    }
 }
 
-const alu01 = new Estudande("Felipe",1001,12); 
+const alu01 = new Estudande("Felipe",1001,12);
+alu01.saudacao() 
 console.log(alu01)
+
+
 
 const prof1 = new Professor("Claudio","Matématica",1001,102);
 prof1.checarTurma(alu01.turma) 

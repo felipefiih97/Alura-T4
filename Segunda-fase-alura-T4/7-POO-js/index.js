@@ -1,5 +1,6 @@
 import {Cliente} from "./Cliente.js"
 import {ContaCorrente} from "./ContaCorrente.js"
+import {ContaPoupanca} from "./ContaPoupanca.js"
 
 /*As classes são os moldes que constroi os objetos, dentro delas nos 
 temos as atributos que armazenam os dados dos objetos criados e metodos que fazem com que as classes
@@ -57,3 +58,5 @@ animal01.age = 3
 
 console.log(animal01)
 animal01.makeSound();
+
+const contapoupanca = new ContaPoupanca();
