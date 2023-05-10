@@ -1,0 +1,23 @@
+@keyframes animacao{
+    from{
+        background-color: blue;
+        opacity: 0.1;
+        transform: translateX(-40px);
+    }
+
+    to{
+        background-color: antiquewhite;
+        transform: translateX();
+    }
+}
+
+.box img { 
+    margin: 50px;
+    width: 570px;
+    height: 735px;
+    animation-name: animacao;
+    animation-duration: 2s;
+    position: relative;
+    animation-timing-function: ease;
+}
+
