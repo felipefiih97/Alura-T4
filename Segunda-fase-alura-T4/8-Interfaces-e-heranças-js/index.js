@@ -27,18 +27,7 @@ ContaCorrenteRicardo.sacar(0) // usando o metodo de sacar.
 
 const contaPoupanca = new ContaPoupanca(50,cliente01, 1001);
 console.log(ContaCorrenteRicardo);
-console.log(contaPoupanca);
-
-const Conta2 = new Conta(); 
-Conta2.cliente = cliente02; 
-Conta2.agencia = 1002;
-
-const Conta3 = new Conta(); 
-Conta3.cliente = 0;
-Conta3.agencia = 1002
-
-
-console.log(Conta3)
+console.log(typeof contaPoupanca);
 
 
 class Animal{ 
@@ -60,5 +49,3 @@ animal01.age = 3
 
 console.log(animal01)
 animal01.makeSound();
-
-const contapoupanca = new ContaPoupanca();
