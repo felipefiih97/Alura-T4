@@ -1,6 +1,6 @@
-import {Cliente} from "./Cliente.js"
+import {Cliente} from "/Users/Eudemar/AluraT4/Segunda-fase-alura-T4/8-Interfaces-e-heranças-js/Cliente.js"
 
-// a classe Conta é uma classe abstrata que não pode ser instânciada
+// a classe Conta é uma classe abstrata que não pode ser instânciada diretamente
 export class Conta{ 
     constructor(saldoInicial,cliente,agencia, ){
         if(this.constructor == Conta){
@@ -26,10 +26,10 @@ get saldo(){
     return this._saldo
 }
 
+//Método abstrato  
 sacar(valor){ 
+    throw new Error("O metódo Saca da conta é abstrato"); 
 
-    let taxa = 1; 
-    return this._sacar(valor, taxa);
 };
 
 _sacar(valor,taxa){
